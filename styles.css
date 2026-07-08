@@ -1,0 +1,125 @@
+/* Deductify — legal pages theme (Eucalyptus) */
+:root {
+  --eucalyptus: #2F7D5A;
+  --eucalyptus-deep: #245f45;
+  --bg: #f5f8f6;
+  --bg-elev: #ffffff;
+  --text: #1b2a22;
+  --text-soft: #4a5b52;
+  --border: #e2ece6;
+  --shadow: 0 1px 3px rgba(31, 74, 54, .06), 0 8px 30px rgba(31, 74, 54, .06);
+  --radius: 18px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --eucalyptus: #5BBD8F;
+    --eucalyptus-deep: #7cd0a6;
+    --bg: #101611;
+    --bg-elev: #182019;
+    --text: #e9f1ec;
+    --text-soft: #a7b8ae;
+    --border: #26332b;
+    --shadow: 0 1px 3px rgba(0,0,0,.4), 0 10px 34px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"] {
+  --eucalyptus: #5BBD8F; --eucalyptus-deep: #7cd0a6;
+  --bg: #101611; --bg-elev: #182019; --text: #e9f1ec; --text-soft: #a7b8ae; --border: #26332b;
+  --shadow: 0 1px 3px rgba(0,0,0,.4), 0 10px 34px rgba(0,0,0,.35);
+}
+:root[data-theme="light"] {
+  --eucalyptus: #2F7D5A; --eucalyptus-deep: #245f45;
+  --bg: #f5f8f6; --bg-elev: #fff; --text: #1b2a22; --text-soft: #4a5b52; --border: #e2ece6;
+  --shadow: 0 1px 3px rgba(31,74,54,.06), 0 8px 30px rgba(31,74,54,.06);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.62;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 22px 96px; }
+
+/* Header */
+header.site {
+  background:
+    radial-gradient(1200px 300px at 50% -140px, color-mix(in srgb, var(--eucalyptus) 22%, transparent), transparent);
+  padding: 64px 22px 40px;
+  text-align: center;
+}
+.logo {
+  width: 92px; height: 92px; border-radius: 22.37%;
+  display: block; margin: 0 auto 20px;
+  box-shadow: var(--shadow);
+}
+header.site h1 { margin: 0; font-size: 2rem; letter-spacing: -.02em; font-weight: 800; }
+header.site .kicker {
+  color: var(--eucalyptus); font-weight: 700; font-size: .82rem;
+  text-transform: uppercase; letter-spacing: .09em; margin-bottom: 8px;
+}
+header.site .updated { color: var(--text-soft); font-size: .92rem; margin-top: 10px; }
+
+/* Card */
+.card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px 30px 28px;
+  margin-top: 30px;
+}
+
+h2 {
+  font-size: 1.28rem; font-weight: 750; letter-spacing: -.01em;
+  margin: 34px 0 6px; padding-top: 14px;
+  color: var(--text);
+}
+h2 .num { color: var(--eucalyptus); font-variant-numeric: tabular-nums; margin-right: 8px; }
+h3 { font-size: 1.02rem; font-weight: 700; margin: 22px 0 4px; }
+p, li { color: var(--text); }
+p { margin: 10px 0; }
+a { color: var(--eucalyptus-deep); text-decoration: none; font-weight: 600; }
+a:hover { text-decoration: underline; }
+ul { padding-left: 20px; margin: 10px 0; }
+li { margin: 7px 0; }
+strong { font-weight: 700; }
+hr { border: none; border-top: 1px solid var(--border); margin: 30px 0; }
+
+.lead { font-size: 1.05rem; color: var(--text-soft); }
+
+.callout {
+  background: color-mix(in srgb, var(--eucalyptus) 10%, var(--bg-elev));
+  border: 1px solid color-mix(in srgb, var(--eucalyptus) 30%, var(--border));
+  border-left: 4px solid var(--eucalyptus);
+  border-radius: 12px; padding: 14px 18px; margin: 18px 0;
+}
+.callout strong { color: var(--eucalyptus-deep); }
+
+.pill-nav { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 22px; }
+.pill {
+  display: inline-block; padding: 9px 18px; border-radius: 999px;
+  background: var(--bg-elev); border: 1px solid var(--border);
+  color: var(--text); font-weight: 600; font-size: .95rem; box-shadow: var(--shadow);
+}
+.pill.primary { background: var(--eucalyptus); color: #fff; border-color: transparent; }
+@media (prefers-color-scheme: dark) { .pill.primary { color: #08130d; } }
+:root[data-theme="dark"] .pill.primary { color: #08130d; }
+:root[data-theme="light"] .pill.primary { color: #fff; }
+
+table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .95rem; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { color: var(--text-soft); font-weight: 700; font-size: .82rem; text-transform: uppercase; letter-spacing: .05em; }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+footer.site {
+  text-align: center; color: var(--text-soft); font-size: .9rem;
+  padding: 40px 22px; border-top: 1px solid var(--border); margin-top: 60px;
+}
+footer.site a { margin: 0 8px; }
